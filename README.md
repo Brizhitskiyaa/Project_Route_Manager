@@ -8,13 +8,13 @@ Supports read requests about stops, buses and shortest routes from one stop to a
 
 Input and output in json. Big example of input in json_input.txt.
 
-Create requests:
-  Add stop
+Create requests:\
+  Add stop\
   Add bus route
   
-Read requests:
-  Get info about stop
-  Get info about bus route
+Read requests:\
+  Get info about stop\
+  Get info about bus route\
   Get shortest route from one stop to another using existing bus routes and accounting for waiting time at stops
 
 
