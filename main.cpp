@@ -555,22 +555,6 @@ std::vector<Request::RequestHolder> ParseRequests(const Dictionary& index,
 }
 
 
-void JsonBusinessLogic() {
-  using namespace bus;
-  BusManager manager;
-  auto doc = Json::Load(std::cin);
-  auto& dict = doc.GetRoot().AsMap();
-
-  const auto& modify_requests_nodes = dict.at("base_requests");
-  const auto& read_requests_nodes = dict.at("stat_requests");
-
-  auto mod_requests = ParseRequests(STR_TO_MOD_REQUEST_TYPE, modify_requests_nodes);
-  auto read_requests = ParseRequests(STR_TO_READ_REQUEST_TYPE, read_requests_nodes);
-
-  ProcessModifyRequests(mod_requests, manager);
-  auto nodes = ProcessReadRequestsToJson(read_requests, manager);
-  Json::ToJson(nodes, std::cout);
-}
 
 void FinalLogic() {
   using namespace bus;
